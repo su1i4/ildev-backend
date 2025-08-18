@@ -1,28 +1,28 @@
-import { Role } from 'src/common/enums/role.enum';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class ProjectEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   name: string;
 
-  @Column({unique: true})
-  email: string;
-
   @Column()
-  password: string;
-
-  @Column({ type: 'enum', enum: Role, default: Role.USER })
-  role: Role;
+  description: string;
 
   @CreateDateColumn()
   created_at: Date;
+
+  @Column()
+  images: string[];
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }

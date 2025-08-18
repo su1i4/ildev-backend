@@ -10,9 +10,6 @@ import {
 import { Role } from 'src/common/enums/role.enum';
 
 export class UserDto {
-  @IsInt()
-  id: number;
-
   @IsNotEmpty()
   @IsString()
   name: string;

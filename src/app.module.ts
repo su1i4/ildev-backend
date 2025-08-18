@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { UserModule } from './user/user.module';
+import { UserModule } from './users/user.module';
 import { AuthModule } from './auth/auth.module';
-import { JwtModule } from '@nestjs/jwt';
+import { FileUploadModule } from './file-upload/file-upload.module';
+import { ProjectsModule } from './projects/projects.module';
+import { StacksModule } from './stacks/stacks.module';
 
 @Module({
   imports: [
@@ -30,6 +32,9 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     UserModule,
     AuthModule,
+    FileUploadModule,
+    ProjectsModule,
+    StacksModule
   ],
 })
 export class AppModule {}
